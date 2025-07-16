@@ -76,8 +76,7 @@ const LaptopListPage = () => {
     const fetchLaptops = async () => {
       setLoading(true);
       try {
-        const API_URL = process.env.REACT_APP_API_URL;
-        const response = await axios.get(`${API_URL}/api/get-laptops`, {
+        const response = await axios.get('http://localhost:5001/api/get-laptops', {
           params: { search: searchTerm, sort: sortBy }
         });
         setLaptops(response.data);
